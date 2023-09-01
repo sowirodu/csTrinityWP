@@ -1,0 +1,36 @@
+/* Background Color */
+.Navbar{
+    background-color: lightblue;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.Navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.Navbar a:hover {
+    background-color: darkseagreen;
+    color: black;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  body {
+    background-color: rgb(231, 158, 158);
+  }
