@@ -30,3 +30,6 @@ INFO: Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (e
 2023.09.14 10:15:04 WARN  no build tool detected in workspace 'C:\Users\Seth Anthony\Documents\New folder\csTrinityWP'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 Sep 14, 2023 10:16:20 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+2023.09.15 23:03:21 INFO  Shutting down server
+2023.09.15 23:03:21 INFO  shutting down Metals
+2023.09.15 23:03:21 INFO  Exiting server
