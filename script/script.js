@@ -224,11 +224,20 @@ for (var x = 1; x < rawRows.length; x++) {
 var statTable = document.getElementById("stat-Table");
 statTable.appendChild(table);
 
+var sortingDirections = {};
 
 function sortTable(columnNumber) {
+    if (sortingDirections[columnNumber] === undefined) {
+        sortingDirections[columnNumber] = "asc"; 
+    } else if (sortingDirections[columnNumber] === "asc") {
+        sortingDirections[columnNumber] = "desc"; 
+    } else {
+        sortingDirections[columnNumber] = "asc";
+    }
+
     var switching, cleanRows, i, x, y, shouldSwitch, dir, switchcount = 0;
     switching = true;
-    dir = "desc"
+    dir = sortingDirections[columnNumber]
 
     while(switching){
         switching = false
