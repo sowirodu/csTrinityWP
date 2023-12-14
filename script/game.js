@@ -1,12 +1,10 @@
 const canvas = document.getElementById("myCanvas");
 const currCanvas = canvas.getContext("2d");
-// Initial setting of the canvas dimensions
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let score = 0;
 let gameStarted = false;
 let gameEnded = false;
-// Update canvas dimensions whenever the window is resized
 
 
 
@@ -47,7 +45,6 @@ class player {
     window.addEventListener("keydown", this.moveListener);
   }
 
-  // To remove the movement listener
   removeMovement() {
     window.removeEventListener("keydown", this.moveListener);
   }
@@ -112,14 +109,11 @@ function isCollide(a, b) {
 
 
 function drawAll() {
-  // Clear the canvas first
   currCanvas.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Draw the objects on the canvas
   pl1.draw();
   point1.drawPoint();
   displayScore();
-  // Now check for collisions and handle them
   if (isCollide(pl1, point1)) {
     point1.collisionHandling(true);
     pl1.isCollided(true);
@@ -128,7 +122,7 @@ function drawAll() {
 }
 
 function displayStartText() {
-  currCanvas.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas first
+  currCanvas.clearRect(0, 0, canvas.width, canvas.height); 
 
   currCanvas.font = "30px Arial";
   currCanvas.fillStyle = "black";
@@ -143,7 +137,7 @@ function displayStartText() {
 function displayEndText() {
   pl1.removeMovement();
   gameStarted = false;
-  currCanvas.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas first
+  currCanvas.clearRect(0, 0, canvas.width, canvas.height); 
 
   currCanvas.font = "30px Arial";
   currCanvas.fillStyle = "black";
@@ -162,15 +156,15 @@ function displayScore() {
   currCanvas.fillText("Score: " + score, canvas.width - 10, 30);
 }
 
-// Add a gameStarted flag
+
 
 function startGame() {
   if (!gameStarted) {
     currCanvas.clearRect(0, 0, canvas.width, canvas.height);
 
-    gameStarted = true; // Set the flag to true, so the game won't start again when space is pressed repeatedly
+    gameStarted = true; 
 
-    // The following lines of code are what currently starts your game.
+
     pl1.movement();
     pl1.lifeTimer();
     drawAll();
@@ -184,7 +178,6 @@ function startGame() {
 }
 
 
-// Listen for the space key
 window.addEventListener("keydown", e => {
   if (e.code === "Space") {
     startGame();
